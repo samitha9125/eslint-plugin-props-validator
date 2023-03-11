@@ -1,5 +1,6 @@
 # ESlint Plugin to Check whether Props exists
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/729cf16d7ab56375f11a/maintainability)](https://codeclimate.com/github/samitha9125/eslint-plugin-rn-testid-checker/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/729cf16d7ab56375f11a/test_coverage)](https://codeclimate.com/github/samitha9125/eslint-plugin-rn-testid-checker/test_coverage) [![codecov](https://codecov.io/gh/samitha9125/eslint-plugin-rn-props-validator/branch/main/graph/badge.svg?token=PAB35G2RNG)](https://codecov.io/gh/samitha9125/eslint-plugin-rn-props-validator) ![Master Flow](https://github.com/samitha9125/eslint-plugin-rn-props-validator/actions/workflows/main.yml/badge.svg)
 ## Introduction
 
 This ESLint plugin is designed to verify that certain components have specific props defined. This can be useful for ensuring that components have required props such as testID and accessible.
