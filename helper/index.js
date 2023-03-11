@@ -8,7 +8,8 @@ const checkForValidity = (node, componentName, dependOn, propName) => {
     
     if (dependOn) {
         const dependable = cCompAttr.some(attr => attr.name && attr.name.name === dependOn);
-        return !dependable || cCompAttr.some(attr => attr.name && attr.name.name === propName);
+        const propNameExists = cCompAttr.some(attr => attr.name && attr.name.name === propName);
+        return !dependable || propNameExists;
     } else {
         return cCompAttr.some(attr => attr.name && attr.name.name === propName);
     }
