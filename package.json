@@ -1,6 +1,6 @@
 {
     "name": "eslint-plugin-rn-props-checker",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "Ensure that given props exists in React Native Components",
     "keywords": [
         "eslint",
