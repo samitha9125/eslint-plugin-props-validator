@@ -1,0 +1,6 @@
+# Unwanted files/folders
+.DS_Store
+node_modules
+
+# Coverage folder
+coverage
