@@ -112,7 +112,7 @@ If you need to ignore the ESLint prop validation of a component in a specific sc
 ```
 3. Using `ignoreESLintPropValidation` prop
 
-In this example, as you can see, `CustomComponent` must have a `customProp` property. But, we can ignore the ESLint prop validation by using the ignoreESLintPropValidation prop.
+In this example, as you can see, `AnyComponent` must have a `anyProp` property. But, we can ignore the ESLint prop validation by using the ignoreESLintPropValidation prop.
 
 ```yaml
 { 'rules': { 'props-checker/validator': ['error', { props: [{ propName: 'anyProp', components: [ 'AnyComponent'] }] }] } }
