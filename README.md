@@ -9,6 +9,15 @@ If the rules are configured correctly, the plugin will generate an error if a co
 
 The plugin also includes a `dependOn` feature that allows you to specify that prop validation for a particular component should only be performed if another prop is present. For example, you could use this feature to validate that a `testID` prop exists only if an `onPress` prop is also present on a component.
 
+## Why this plugin?
+
+“Can `Typescript` be used to achieve this, right?" For required props, yes. 
+
+However, while Typescript can identify required props, there are situations where optional props should be present - for example, to perform E2E testing. In these scenarios, this plugin can be used to validate the existence of props without making them required.”
+
+For Javascript developers, this will be a great help to validate the props of the components.
+
+
 ## Installation
 
 You'll first need to install [ESLint](https://eslint.org/):
@@ -125,6 +134,7 @@ If you want to ignore the ESLint prop validation of the `AnyComponent` in a part
 
 ## ESLint Extends
 If this plugin configurations take too much space from your main `eslintrc` file, you can use the extends feature from eslint to keep these rule settings in another file in another directory. [Example](https://gist.github.com/randallreedjr/40282968b6f39dc3f423dd3cf1106455) can be found here.
+
 
 ## Contribution
 
