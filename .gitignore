@@ -6,4 +6,4 @@ node_modules
 coverage
 
 # Packs
-eslint-plugin-rn-props-checker-*
+eslint-plugin-props-checker-*

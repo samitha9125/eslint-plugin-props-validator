@@ -17,19 +17,19 @@ You'll first need to install [ESLint](https://eslint.org/):
 npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-rn-props-checker`:
+Next, install `eslint-plugin-props-checker`:
 
 ```sh
-npm install eslint-plugin-rn-props-checker --save-dev
+npm install eslint-plugin-props-checker --save-dev
 ```
 
 ## Usage
 
-Add `rn-props-checker` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `props-checker` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
-    "plugins": ["rn-props-checker"]
+    "plugins": ["props-checker"]
 }
 ```
 
@@ -41,7 +41,7 @@ A sample can be found below.
 {
     'rules':
         {
-            'rn-props-checker/validator':
+            'props-checker/validator':
                 [
                     'error',
                     {
@@ -88,7 +88,7 @@ If you need to ignore the ESLint prop validation of a component in a specific sc
 1. A warning will be generated instead of an error
 
 ```yaml
-{ 'rules': { 'rn-props-checker/validator': ['warn', { props: [{ propName: 'customProp', components: ['CustomComponent'] }] }] } }
+{ 'rules': { 'props-checker/validator': ['warn', { props: [{ propName: 'customProp', components: ['CustomComponent'] }] }] } }
 ```
 
 2. Multiple components with multiple dependOn to validate against `testID` prop.
@@ -97,7 +97,7 @@ If you need to ignore the ESLint prop validation of a component in a specific sc
 {
     'rules':
         {
-            'rn-props-checker/validator':
+            'props-checker/validator':
                 [
                     'error',
                     {
@@ -115,7 +115,7 @@ If you need to ignore the ESLint prop validation of a component in a specific sc
 In this example, as you can see, `CustomComponent` must have a `customProp` property. But, we can ignore the ESLint prop validation by using the ignoreESLintPropValidation prop.
 
 ```yaml
-{ 'rules': { 'rn-props-checker/validator': ['error', { props: [{ propName: 'anyProp', components: [ 'AnyComponent'] }] }] } }
+{ 'rules': { 'props-checker/validator': ['error', { props: [{ propName: 'anyProp', components: [ 'AnyComponent'] }] }] } }
 ```
 
 If you want to ignore the ESLint prop validation of the `AnyComponent` in a particular situation/screen, you can use the `ignoreESLintPropValidation` prop.
