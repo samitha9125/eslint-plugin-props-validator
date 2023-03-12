@@ -7,7 +7,7 @@ This ESLint plugin is designed to verify that certain components (**in React/Rea
 
 If the rules are configured correctly, the plugin will generate an error if a component is missing any of the required props.
 
-The plugin also includes a `dependOn` feature that allows you to specify that prop validation for a particular component should only be performed if another prop is present. For example, you could use this feature to validate that a `testID` prop exists only if an `onPres`s prop is also present on a component.
+The plugin also includes a `dependOn` feature that allows you to specify that prop validation for a particular component should only be performed if another prop is present. For example, you could use this feature to validate that a `testID` prop exists only if an `onPress` prop is also present on a component.
 
 ## Installation
 
@@ -69,9 +69,9 @@ You can use the following configurations to customize the plugin. But,
 -   `props`, `propName` and `components` are mandatory.
 -   `components` can be a `string` or an `object` with `component` and `dependOn` properties.
 
-Props: Array of validation objects
-PropName: Name of the prop to be validated
-Components: Array of components to be validated against the `propName`
+1. `Props`: Array of validation objects
+2. `PropName`: Name of the prop to be validated
+3. `Components`: Array of components to be validated against the `propName`
 
 ## Features
 
@@ -83,7 +83,7 @@ If you need to ignore the ESLint prop validation of a component in a specific sc
 
 
 
-##Examples
+## Examples
 
 1. A warning will be generated instead of an error
 
