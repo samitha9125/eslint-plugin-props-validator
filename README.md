@@ -1,9 +1,9 @@
-# ESlint Plugin to Check whether Props exists
+# ESlint Plugin to Check whether Props exist
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/729cf16d7ab56375f11a/maintainability)](https://codeclimate.com/github/samitha9125/eslint-plugin-rn-testid-checker/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/729cf16d7ab56375f11a/test_coverage)](https://codeclimate.com/github/samitha9125/eslint-plugin-rn-testid-checker/test_coverage) [![codecov](https://codecov.io/gh/samitha9125/eslint-plugin-rn-props-validator/branch/main/graph/badge.svg?token=PAB35G2RNG)](https://codecov.io/gh/samitha9125/eslint-plugin-rn-props-validator) ![Master Flow](https://github.com/samitha9125/eslint-plugin-rn-props-validator/actions/workflows/main.yml/badge.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b3c97859f2e06cd3a6b0/maintainability)](https://codeclimate.com/github/samitha9125/eslint-plugin-props-validator/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/b3c97859f2e06cd3a6b0/test_coverage)](https://codeclimate.com/github/samitha9125/eslint-plugin-props-validator/test_coverage) [![codecov](https://codecov.io/gh/samitha9125/eslint-plugin-props-validator/branch/main/graph/badge.svg?token=PAB35G2RNG)](https://codecov.io/gh/samitha9125/eslint-plugin-props-validator) ![Master Flow](https://github.com/samitha9125/eslint-plugin-props-validator/actions/workflows/main.yml/badge.svg)
 ## Introduction
 
-This ESLint plugin is designed to verify that certain components have specific props defined. This can be useful for ensuring that components have required props such as testID and accessible.
+This ESLint plugin is designed to verify that certain components (**in React/React Native**) have specific props defined. This can be useful to ensure that components have whatever props you want them to have.
 
 If the rules are configured correctly, the plugin will generate an error if a component is missing any of the required props.
 
@@ -35,7 +35,7 @@ Add `rn-props-checker` to the plugins section of your `.eslintrc` configuration 
 
 Then configure the rules you want to use under the rules section. Once you enable this, it will errors for all the components that we have mentioned.
 
-Sample can be found below.
+A sample can be found below.
 
 ```yaml
 {
@@ -58,7 +58,7 @@ Sample can be found below.
 
 According to the above configuration, the plugin will throw an error,
 
--   if the `Button` component do not have a `testID` prop
+-   if the `Button` component does not have a `testID` prop.
 -   if the `Text` component does not have a `testID` prop only if it has an `onPress` prop defined.
 -   if the `TextInput` component does not have an `accessible` prop.
 
@@ -73,8 +73,17 @@ Props: Array of validation objects
 PropName: Name of the prop to be validated
 Components: Array of components to be validated against the `propName`
 
+## Features
 
-## Samples
+#### 1. `dependOn` feature
+If you need to check whether a prop exists only if another prop exists, you can use the `dependOn` feature. This feature allows you to specify that prop validation for a particular component should only be performed if another prop is present.
+
+#### 2. `ignoreESLintPropValidation` prop feature
+If you need to ignore the ESLint prop validation of a component in a specific scenario, you can use the `ignoreESLintPropValidation` prop. [Examples](##Examples) are included below.
+
+
+
+##Examples
 
 1. A warning will be generated instead of an error
 
@@ -101,6 +110,21 @@ Components: Array of components to be validated against the `propName`
         }
 }
 ```
+3. Using `ignoreESLintPropValidation` prop
+
+In this example, as you can see, `CustomComponent` must have a `customProp` property. But, we can ignore the ESLint prop validation by using the ignoreESLintPropValidation prop.
+
+```yaml
+{ 'rules': { 'rn-props-checker/validator': ['error', { props: [{ propName: 'anyProp', components: [ 'AnyComponent'] }] }] } }
+```
+
+If you want to ignore the ESLint prop validation of the `AnyComponent` in a particular situation/screen, you can use the `ignoreESLintPropValidation` prop.
+```tsx
+<AnyComponent ignoreESLintPropValidation>
+```
+
+## ESLint Extends
+If this plugin configurations take too much space from your main `eslintrc` file, you can use the extends feature from eslint to keep these rule settings in another file in another directory. [Example](https://gist.github.com/randallreedjr/40282968b6f39dc3f423dd3cf1106455) can be found here.
 
 ## Contribution
 

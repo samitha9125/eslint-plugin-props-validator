@@ -1,47 +1,53 @@
 {
-    "name": "eslint-plugin-rn-props-checker",
-    "version": "1.0.1",
-    "description": "Ensure that given props exists in React Native Components",
-    "keywords": [
-        "eslint",
-        "eslintplugin",
-        "eslint-plugin",
-        "react-native",
-        "react-native-props-checker",
-        "react-native-props-validator",
-        "props-validator"
-    ],
-    "author": "Samitha Nanayakkara",
-    "main": "./lib/index.js",
-    "exports": "./lib/index.js",
-    "scripts": {
-        "lint": "npm-run-all \"lint:*\"",
-        "lint:eslint-docs": "npm-run-all \"update:eslint-docs -- --check\"",
-        "lint:js": "eslint .",
-        "test": "c8 mocha tests --recursive",
-        "update:eslint-docs": "eslint-doc-generator",
-        "deploy": "npm version patch && npm pack && npm publish"
-    },
-    "dependencies": {
-        "requireindex": "^1.2.0"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.21.0",
-        "@babel/eslint-parser": "^7.19.1",
-        "@babel/preset-react": "^7.18.6",
-        "c8": "^7.13.0",
-        "eslint": "^8.36.0",
-        "eslint-doc-generator": "^1.0.0",
-        "eslint-plugin-eslint-plugin": "^5.0.0",
-        "eslint-plugin-node": "^11.1.0",
-        "mocha": "^10.0.0",
-        "npm-run-all": "^4.1.5"
-    },
-    "engines": {
-        "node": "^14.17.0 || ^16.0.0 || >= 18.0.0"
-    },
-    "peerDependencies": {
-        "eslint": ">=7"
-    },
-    "license": "ISC"
+  "name": "eslint-plugin-props-checker",
+  "version": "1.0.1",
+  "description": "Ensure that given props exists in React or React Native Components",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "eslint-react",
+    "eslint-react-native",
+    "react",
+    "react-native",
+    "react-props-checker",
+    "react-native-props-checker",
+    "react-props-validator",
+    "react-native-props-validator",
+    "props-validator"
+  ],
+  "main": "./lib/index.js",
+  "exports": "./lib/index.js",
+  "scripts": {
+    "lint": "npm-run-all \"lint:*\"",
+    "lint:eslint-docs": "npm-run-all \"update:eslint-docs -- --check\"",
+    "lint:js": "eslint .",
+    "test": "c8 mocha tests --recursive",
+    "update:eslint-docs": "eslint-doc-generator",
+    "deploy": "npm version patch && npm pack && npm publish"
+  },
+  "dependencies": {
+    "requireindex": "^1.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-react": "^7.18.6",
+    "c8": "^7.13.0",
+    "eslint": "^8.36.0",
+    "eslint-doc-generator": "^1.0.0",
+    "eslint-plugin-eslint-plugin": "^5.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "mocha": "^10.0.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "engines": {
+    "node": "^14.17.0 || ^16.0.0 || >= 18.0.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=7"
+  },
+  "repository": "https://github.com/samitha9125/eslint-plugin-props-validator.git",
+  "author": "Samitha Nanayakkara <samithananayakkara@gmail.com> (https://www.samithananayakkara.com)",
+  "license": "MIT"
 }
